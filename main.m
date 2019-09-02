@@ -1,30 +1,5 @@
 function varargout = main(varargin)
-% MAIN MATLAB code for main.fig
-%      MAIN, by itself, creates a new MAIN or raises the existing
-%      singleton*.
-%
-%      H = MAIN returns the handle to a new MAIN or the handle to
-%      the existing singleton*.
-%
-%      MAIN('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in MAIN.M with the given input arguments.
-%
-%      MAIN('Property','Value',...) creates a new MAIN or raises the
-%      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before main_OpeningFcn gets called.  An
-%      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to main_OpeningFcn via varargin.
-%
-%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
-%      instance to run (singleton)".
-%
-% See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help main
-
-% Last Modified by GUIDE v2.5 11-May-2015 19:47:52
-
-% Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
@@ -41,35 +16,15 @@ if nargout
 else
     gui_mainfcn(gui_State, varargin{:});
 end
-% End initialization code - DO NOT EDIT
 
-
-% --- Executes just before main is made visible.
 function main_OpeningFcn(hObject, eventdata, handles, varargin)
-% This function has no output args, see OutputFcn.
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to main (see VARARGIN)
 
-% Choose default command line output for main
 handles.output = hObject;
 
-% Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes main wait for user response (see UIRESUME)
-% uiwait(handles.figure1);
-
-
-% --- Outputs from this function are returned to the command line.
 function varargout = main_OutputFcn(hObject, eventdata, handles) 
-% varargout  cell array for returning output args (see VARARGOUT);
-% hObject    handle to figure
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% standard size of image is 300 *300
 global co
 clc
 warning off
@@ -88,38 +43,19 @@ if size(ls('database'),2) == 2
     delete('features.mat');
     delete('info.mat');
 end
-% Get default command line output from handles structure
+
 varargout{1} = handles.output;
 
-
-
 function edit1_Callback(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-% Hints: get(hObject,'String') returns contents of edit1 as text
-%        str2double(get(hObject,'String')) returns contents of edit1 as a double
-
-
-% --- Executes during object creation, after setting all properties.
 function edit1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edit1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
 
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 
-
-% --- Executes on button press in pushbutton1.
 function pushbutton1_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+
 p  = get(handles.edit1,'UserData');
 if strcmp(p,'123') == 1
     delete(hObject);
@@ -143,81 +79,32 @@ else
     msgbox('INVALID PASSWORD FRIEND... XX','WARNING....!!!','warn','modal')
 end
 
-% --- Executes on button press in pushbutton2.
 function pushbutton2_Callback(hObject, eventdata, handles)
-% hObject    handle to pushbutton2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+
 close gcf
 
-% --------------------------------------------------------------------
 function AD_NW_IMAGE_Callback(hObject, eventdata, handles)
-% hObject    handle to AD_NW_IMAGE (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function DE_LETE_Callback(hObject, eventdata, handles)
-% hObject    handle to DE_LETE (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function TRAIN_ING_Callback(hObject, eventdata, handles)
-% hObject    handle to TRAIN_ING (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function STA_RT_Callback(hObject, eventdata, handles)
-% hObject    handle to STA_RT (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function DATA_BASE_Callback(hObject, eventdata, handles)
-% hObject    handle to DATA_BASE (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function RESET_ALL_Callback(hObject, eventdata, handles)
-% hObject    handle to RESET_ALL (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function EXI_T_Callback(hObject, eventdata, handles)
-% hObject    handle to EXI_T (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function HE_LP_Callback(hObject, eventdata, handles)
-% hObject    handle to HE_LP (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
-
-% --------------------------------------------------------------------
 function READ_ME_Callback(hObject, eventdata, handles)
-% hObject    handle to READ_ME (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+
 winopen('help.pdf')
 
-% --------------------------------------------------------------------
 function PRE_CAP_Callback(hObject, eventdata, handles)
-% hObject    handle to PRE_CAP (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+
 if exist('features.mat','file') == 0
     msgbox('FIRST TRAIN YOUR DATABASE','INFO...!!!','MODAL')
     return
@@ -376,8 +263,7 @@ else
     set(handles.axes2,'box','on','xcolor','w','ycolor','w','xtick',[],'ytick',[],'color',[0.0431  0.5176  0.7804],'linewidth',1.5)
 end
     
-
-% --------------------------------------------------------------------
+    
 function LIVE_CAM_Callback(hObject, eventdata, handles)
 % hObject    handle to LIVE_CAM (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -544,7 +430,7 @@ else
     set(handles.axes1,'box','on','xcolor','w','ycolor','w','xtick',[],'ytick',[],'color',[0.0431  0.5176  0.7804],'linewidth',1.5);
     set(handles.axes2,'box','on','xcolor','w','ycolor','w','xtick',[],'ytick',[],'color',[0.0431  0.5176  0.7804],'linewidth',1.5)
 end
-% --------------------------------------------------------------------
+
 function SINGL_PIC_Callback(hObject, eventdata, handles)
 % hObject    handle to SINGL_PIC (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -586,7 +472,6 @@ close(h)
 cd ..
 
 
-% --------------------------------------------------------------------
 function MULTI_PIC_Callback(hObject, eventdata, handles)
 % hObject    handle to MULTI_PIC (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -635,7 +520,6 @@ close(h)
 cd ..
 
 
-% --------------------------------------------------------------------
 function BR_OWSE_Callback(hObject, eventdata, handles)
 % hObject    handle to BR_OWSE (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -788,7 +672,6 @@ if strcmp(bx,'AUTO') == 1
 end
 
 
-% --------------------------------------------------------------------
 function FRM_CAM_Callback(hObject, eventdata, handles)
 % hObject    handle to FRM_CAM (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -918,7 +801,6 @@ reset(handles.axes2)
 set(handles.axes2,'box','on','xtick',[],'ytick',[],'xcolor',[1 1 1],'ycolor',[1 1  1],'color',co,'linewidth',1.5)
 
 
-% --- Executes on key press with focus on edit1 and none of its controls.
 function edit1_KeyPressFcn(hObject, eventdata, handles)
 % hObject    handle to edit1 (see GCBO)
 % eventdata  structure with the following fields (see UICONTROL)
@@ -971,7 +853,6 @@ set(handles.edit1,'UserData',pass)
 set(handles.edit1,'String',char('*'*sign(pass)))
 
 
-% --------------------------------------------------------------------
 function VI_EW_Callback(hObject, eventdata, handles)
 % hObject    handle to VI_EW (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -1004,8 +885,6 @@ for k = 3:length(f)
 end
 
 
-
-% --------------------------------------------------------------------
 function Start_Training_Callback(hObject, eventdata, handles)
 % hObject    handle to Start_Training (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -1037,7 +916,6 @@ else
 end
 
 
-% --------------------------------------------------------------------
 function BYE_Callback(hObject, eventdata, handles)
 % hObject    handle to BYE (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -1045,10 +923,6 @@ function BYE_Callback(hObject, eventdata, handles)
 close gcf
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%end%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% --------------------------------------------------------------------
 function ATTENDENCE_Callback(hObject, eventdata, handles)
 % hObject    handle to ATTENDENCE (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -1059,7 +933,7 @@ else
     msgbox('NO ATTENDENCE SHEET TO DISPLAY','INFO...!!!','HELP','MODAL')
 end
 
-% --------------------------------------------------------------------
+
 function DEL_ATTENDENCE_Callback(hObject, eventdata, handles)
 % hObject    handle to DEL_ATTENDENCE (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -1072,7 +946,6 @@ else
 end
 
 
-% --------------------------------------------------------------------
 function Untitled_1_Callback(hObject, eventdata, handles)
 % hObject    handle to Untitled_1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -1100,11 +973,8 @@ if strcmpi(x,'yes') == 1
 end
 
 
-% --------------------------------------------------------------------
 function Untitled_2_Callback(hObject, eventdata, handles)
-% hObject    handle to Untitled_2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+
 cla(handles.axes1);
 reset(handles.axes1);
 set(handles.axes1,'box','on','xcolor','w','ycolor','w','xtick',[],'ytick',[],'color',[0.0431  0.5176  0.7804],'linewidth',1.5)
@@ -1114,22 +984,11 @@ set(handles.axes2,'box','on','xcolor','w','ycolor','w','xtick',[],'ytick',[],'co
 set(handles.text5,'string','')
 
 
-% --------------------------------------------------------------------
 function Untitled_3_Callback(hObject, eventdata, handles)
-% hObject    handle to Untitled_3 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
 
-% --------------------------------------------------------------------
 function Untitled_4_Callback(hObject, eventdata, handles)
-% hObject    handle to Untitled_4 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 
 
-% --------------------------------------------------------------------
 function Untitled_5_Callback(hObject, eventdata, handles)
-% hObject    handle to Untitled_5 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+
